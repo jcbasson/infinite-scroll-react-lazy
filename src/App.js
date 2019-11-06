@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Dummy } from "./intersectionObserver";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dummy id={"First"}>
+        <h1>Stuff1</h1>
+      </Dummy>
+      <Dummy id={"Second"}>
+        <h1>Stuff2</h1>
+      </Dummy>
+      <Dummy id={"Third"}>
+        <h1>Stuff3</h1>
+      </Dummy>
+      <Dummy id={"Fourth"}>
+        <h1>Stuff4</h1>
+      </Dummy>
+      <Dummy id={"Fifth"}>
+        <h1>Stuff5</h1>
+      </Dummy>
     </div>
   );
 }
