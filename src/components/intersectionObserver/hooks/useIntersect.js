@@ -1,10 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const IntersectObserver = ({
-  root = null,
-  rootMargin,
-  threshold = 0
-}) => {
+export const useIntersect = ({ root = null, rootMargin, threshold = 0 }) => {
   const [entry, updateEntry] = useState({});
   const [node, setNode] = useState(null);
 
@@ -17,7 +13,6 @@ export const IntersectObserver = ({
   );
 
   const onIntersection = (updateEntry, entry) => {
-    console.log("onIntersection ()");
     if (entry.isIntersecting) {
       updateEntry(entry);
       const { current: currentObserver } = observer;
