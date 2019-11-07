@@ -5,7 +5,6 @@ import { BulletList } from "react-content-loader";
 import { DynamicModule } from "../dynamicModule";
 
 function App() {
-  const Dummy = React.lazy(() => import("../dummy"));
   return (
     <div className="App">
       <IntersectionObserver id={"First"}>
@@ -20,7 +19,7 @@ function App() {
       <IntersectionObserver id={"Fourth"}>
         <DynamicModule
           placeholder={<BulletList />}
-          component={() => <Dummy />}
+          component={() => import("../dummy")}
         />
       </IntersectionObserver>
       <IntersectionObserver id={"Fifth"}>

@@ -1,11 +1,14 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { ErrorBoundary } from "../errorBoundary";
 
 export const DynamicModule = ({ placeholder, component }) => {
+  const LazyComponent = lazy(component);
   return (
     <>
-      <ErrorBoundary fallback={<h2>Error!</h2>}>
-        <Suspense fallback={placeholder}>{component()}</Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={placeholder}>
+          <LazyComponent></LazyComponent>
+        </Suspense>
       </ErrorBoundary>
     </>
   );
